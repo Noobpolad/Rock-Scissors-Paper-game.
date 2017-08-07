@@ -1,0 +1,88 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+
+using namespace std;
+void paperRockScissors();
+
+int main()
+{
+
+    paperRockScissors();
+
+    return 0;
+}
+
+void paperRockScissors(){
+
+    srand(time(0));
+
+    string playersCommand;
+    string computerShape[3] = {"R","S","P"};
+    string computerCommand;
+    int playersCounter = 0;
+    int computerCounter = 0;
+
+    do{
+
+        cout << "Enter the shape:";
+        cin >> playersCommand;
+        cout << endl << endl;
+
+        computerCommand = computerShape[rand()%3];
+
+        if(playersCommand == computerCommand){
+            cout << "Player:" << playersCommand << "  " << "Computer:" << computerCommand << endl;
+            cout << "TIE" << endl << endl;
+            cout << "Player score:" << playersCounter << endl;
+            cout << "Computer score:" << computerCounter << endl << endl;
+        }
+        else if(playersCommand == "R" && computerCommand == "S"){
+            playersCounter++;
+            cout << "Player:" << playersCommand << "  " << "Computer:" << computerCommand << endl;
+            cout << "Player Won!" << endl << endl;
+            cout << "Player score:" << playersCounter << endl;
+            cout << "Computer score:" << computerCounter << endl << endl;
+        }
+        else if(playersCommand == "S" && computerCommand == "R"){
+            computerCounter++;
+            cout << "Player:" << playersCommand << "  " << "Computer:" << computerCommand << endl;
+            cout << "Computer Won!" << endl << endl;
+            cout << "Player score:" << playersCounter << endl;
+            cout << "Computer score:" << computerCounter << endl << endl;
+        }
+        else if(playersCommand == "R" && computerCommand == "P"){
+            computerCounter++;
+            cout << "Player:" << playersCommand << "  " << "Computer:" << computerCommand << endl;
+            cout << "Computer Won!" << endl << endl;
+            cout << "Player score:" << playersCounter << endl;
+            cout << "Computer score:" << computerCounter << endl << endl;
+        }
+        else if(playersCommand == "P" && computerCommand == "R"){
+            playersCounter++;
+            cout << "Player:" << playersCommand << "  " << "Computer:" << computerCommand << endl;
+            cout << "Player Won!" << endl << endl;
+            cout << "Player score:" << playersCounter << endl;
+            cout << "Computer score:" << computerCounter << endl << endl;
+        }
+        else if(playersCommand == "S" && computerCommand == "P"){
+            playersCounter++;
+            cout << "Player:" << playersCommand << "  " << "Computer:" << computerCommand << endl;
+            cout << "Player Won!" << endl << endl;
+            cout << "Player score:" << playersCounter << endl;
+            cout << "Computer score:" << computerCounter << endl << endl;
+        }
+        else if(playersCommand == "P" && computerCommand == "S"){
+            computerCounter++;
+            cout << "Player:" << playersCommand << "  " << "Computer:" << computerCommand << endl;
+            cout << "Computer Won!" << endl << endl;
+            cout << "Player score:" << playersCounter << endl;
+            cout << "Computer score:" << computerCounter << endl << endl;
+        }
+        else{
+            cout << "Wrong command try again." << endl << endl;
+        }
+
+}while(playersCommand != "exit");
+
+}
